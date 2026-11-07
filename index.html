@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Legal — MF Arena</title>
-<meta name="description" content="Legal for MF Arena, a mutual fund portfolio analytics app.">
+<title>See inside your mutual funds — MF Arena</title>
+<meta name="description" content="MF Arena reads your own CAMS or KFintech mutual fund statement and shows your real return (XIRR), the stocks inside your funds, fund overlap, fees and tax. Facts, never advice.">
 <style>
 :root{--bg:#F4F4F5;--card:#FFFFFF;--text:#18181B;--muted:#52525B;--faint:#5F5F69;--brand:#18181B;--line:#E4E4E7}
 @media (prefers-color-scheme:dark){:root{--bg:#09090B;--card:#18181B;--text:#FAFAFA;--muted:#A1A1AA;--faint:#8E8E98;--brand:#C6F36B;--line:#2E2E34}}
@@ -18,13 +18,25 @@ section{background:var(--card);border-radius:20px;padding:4px 20px 8px;margin-to
 p,li{color:var(--muted)}ul{padding-left:20px}
 nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 nav a{background:var(--card);color:var(--brand);padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px}
+.cta a{padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:700}
+.cta .primary{background:var(--text);color:var(--bg)}.cta .secondary{background:var(--card);color:var(--text)}
+.facts{list-style:none;padding:0;display:grid;gap:12px;margin:24px 0}
+.facts li{background:var(--card);border-radius:20px;padding:16px 20px}.facts b{color:var(--text);display:block}
 footer{margin-top:40px;color:var(--faint);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
 <body><main>
 <header><a href="./">MF Arena</a></header>
-<h1>MF Arena</h1>
-<p class="summary">See what your mutual funds really hold — your value, returns, fees, and the stocks inside your funds, from your own statement. Facts about your portfolio, never advice.</p>
+<h1>See inside your mutual funds</h1>
+<p class="summary">MF Arena reads your own CAMS or KFintech statement and shows the facts about your money in one place. Facts about your portfolio, never advice.</p>
+<ul class="facts">
+<li><b>Your real return</b>Value, what you put in, gain and XIRR, updated with the latest NAV every day.</li>
+<li><b>What your funds actually hold</b>The stocks inside all your funds added together, and which funds hold the same stocks.</li>
+<li><b>What it costs you</b>Yearly fees, Direct vs Regular, and the tax if you sold today.</li>
+</ul>
+<div class="cta"><a class="primary" href="mailto:mfarena.importer@gmail.com?subject=MF%20Arena%20early%20access&amp;body=Hi%2C%20I%20would%20like%20to%20try%20MF%20Arena.%20My%20Gmail%20for%20the%20Play%20test%20is%3A%20">Get early access</a></div>
+<p class="date">Early access opens your email app with a message to us. We use your address only to send you the test invite.</p>
 <p>Policies for the app:</p>
 <nav><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms of Use</a><a href="./delete-account.html">Delete your account</a></nav>
 <footer>Operated by Ajay Vallabhaneni (individual developer of MF Arena), Hyderabad, Telangana, India · Contact: <a href="mailto:mfarena.importer@gmail.com">mfarena.importer@gmail.com</a><br>
