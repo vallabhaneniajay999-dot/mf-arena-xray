@@ -33,7 +33,8 @@ a{color:inherit}
 .btn-lime{background:var(--lime);color:var(--on-lime);box-shadow:0 8px 24px rgba(198,243,107,.25)}
 .btn-ghost{background:transparent;color:var(--hero-text);border:1px solid rgba(255,255,255,.28)}
 .btn-dark{background:var(--text);color:var(--bg)}
-.top .btn{padding:9px 16px;font-size:14px}
+.top nav a.btn{padding:9px 16px;font-size:14px;color:var(--bg);background:var(--text)}
+.top nav a.btn:hover{background:var(--text);color:var(--bg)}
 .hero{margin:12px 0 0;background:var(--hero);color:var(--hero-text);border-radius:32px;overflow:hidden;position:relative}
 .hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:56px 48px 0}
 .hero h1{font-size:clamp(36px,6vw,58px);line-height:1.05;letter-spacing:-1.5px;margin:0 0 16px;font-weight:600}
@@ -42,7 +43,7 @@ a{color:inherit}
 .hero .actions{display:flex;flex-wrap:wrap;gap:12px}
 .hero .note{color:var(--hero-muted);font-size:13px;margin:16px 0 0}
 .phone{width:min(300px,78vw);margin:0 auto;border-radius:40px;padding:10px;background:#0B0B0D;box-shadow:0 40px 80px rgba(0,0,0,.45),inset 0 0 0 1px #2E2E34}
-.phone img{display:block;width:100%;border-radius:31px}
+.phone img{display:block;width:100%;height:auto;border-radius:31px}
 .hero .phone{margin-bottom:-90px;animation:float 6s ease-in-out infinite}
 .glow{position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(198,243,107,.22),transparent 65%);pointer-events:none}
 .after-hero{height:8px}
@@ -60,6 +61,16 @@ section.block{padding:56px 0}
 .shots .phone{width:240px;border-radius:34px;padding:8px;box-shadow:0 20px 40px rgba(24,24,27,.18)}
 .shots .phone img{border-radius:27px}
 .shots figcaption{color:var(--muted);font-size:14px;margin-top:12px;font-weight:500}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:40px 0}
+.feature.flip .copy{order:2}
+.feature .copy h2{margin-bottom:12px}
+.feature .copy p{color:var(--muted);font-size:17px;margin:0 0 16px}
+.feature .copy ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.feature .copy li{display:flex;gap:10px;color:var(--text);font-weight:500}
+.feature .copy li::before{content:"";flex:0 0 8px;height:8px;margin-top:9px;border-radius:50%;background:var(--lime)}
+.feature .copy .ic{margin-bottom:16px}
+.feature .phone{width:min(290px,80vw)}
+.also{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 .steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;list-style:none;padding:0;margin:0}
 .steps li{background:var(--card);border-radius:24px;padding:24px;counter-increment:s}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--text);color:var(--bg);font-weight:600;margin-bottom:14px}
@@ -72,6 +83,12 @@ section.block{padding:56px 0}
 .dl code{word-break:break-all;font-size:12px}
 .fine{color:var(--faint);font-size:13px}
 .notice{border:1px solid var(--line);border-radius:24px;padding:20px 24px;color:var(--muted)}
+.faq details{background:var(--card);border-radius:20px;padding:4px 20px;margin-bottom:10px}
+.faq summary{cursor:pointer;list-style:none;font-weight:600;font-size:16px;padding:16px 28px 16px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:12px;font-size:22px;color:var(--muted);transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin:0 0 16px}
 footer{padding:40px 0 56px;color:var(--faint);font-size:13px;border-top:1px solid var(--line);margin-top:24px}
 footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 footer .links a{color:var(--muted);text-decoration:none;font-weight:500}
@@ -87,7 +104,7 @@ footer .links a{color:var(--muted);text-decoration:none;font-weight:500}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @supports (animation-timeline:view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 90%}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-@media (max-width:820px){.hero-in{grid-template-columns:1fr;padding:40px 24px 0;text-align:left}.grid3,.steps{grid-template-columns:1fr}.dl{grid-template-columns:1fr}.top nav a.hide-sm{display:none}}
+@media (max-width:820px){.hero-in{grid-template-columns:1fr;padding:36px 22px 0;text-align:left}.hero h1{font-size:38px;letter-spacing:-1px}.hero p.lead{font-size:16px}.hero .actions .btn{flex:1 1 auto;justify-content:center}.grid3,.steps,.feature{grid-template-columns:1fr}.feature{gap:28px;padding:24px 0}.feature.flip .copy{order:0}.dl{grid-template-columns:1fr}.top nav a.hide-sm{display:none}}
 </style>
 </head>
 <body>
@@ -105,29 +122,25 @@ footer .links a{color:var(--muted);text-decoration:none;font-weight:500}
 <div class="actions rise" style="--d:.16s"><a class="btn btn-lime" href="https://github.com/vallabhaneniajay999-dot/mf-arena-xray/releases/latest/download/mf-arena.apk">Download for Android</a><a class="btn btn-ghost" href="mailto:hello@mfarena.com?subject=MF%20Arena%20early%20access&amp;body=Hi%2C%20I%20would%20like%20to%20try%20MF%20Arena.%20My%20Gmail%20for%20the%20Play%20test%20is%3A%20">Get early access</a></div>
 <p class="note rise" style="--d:.22s">Free test version · Android 7+ · 50 MB · <a href="#download">how to install</a></p>
 </div>
-<div class="rise" style="--d:.2s"><div class="phone"><img src="assets/home.jpg" alt="MF Arena home screen with a demo portfolio: value, what was put in, gain and the growth line" width="540" height="1152"></div></div>
+<div class="rise" style="--d:.2s"><div class="phone"><img src="assets/home.jpg" alt="MF Arena home screen: value, what was put in, gain and the growth line (sample portfolio)" width="720" height="1536"></div></div>
 </div>
 </section>
 <div class="after-hero"></div>
 
 <section class="block">
-<h2 class="reveal">What you see</h2>
-<p class="sub reveal">Everything is worked out from your own statement, with the latest NAV every day.</p>
-<div class="grid3">
-<div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Your real return</h3><p>Value, what you put in, gain and XIRR for the funds you hold, the way investment platforms show it.</p></div>
-<div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><h3>What your funds actually hold</h3><p>The stocks inside all your funds added together, and which of your funds hold the same stocks.</p></div>
-<div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div><h3>What it costs you</h3><p>Yearly fees, Direct vs Regular, and the tax if you sold today.</p></div>
+<div class="feature">
+<div class="copy reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></div><h2>What your funds actually hold</h2><p>X-Ray adds up the stocks inside all your funds, so you see where your money really sits.</p><ul><li>Your money in each stock, through every fund</li><li>Which of your funds hold the same stocks</li><li>Sectors, and the split between stocks, bonds, gold and cash</li></ul></div>
+<div class="reveal"><div class="phone"><img src="assets/xray.jpg" alt="X-Ray: the stocks inside your funds, with the share of your money in each" loading="lazy" width="720" height="1536"></div></div>
 </div>
-</section>
-
-<section class="block">
-<h2 class="reveal">A look inside the app</h2>
-<p class="sub reveal">Shown with the demo portfolio — every screen works without signing in.</p>
-<div class="shots reveal">
-<figure><div class="phone"><img src="assets/xray.jpg" alt="X-Ray: the stocks inside your funds" loading="lazy" width="540" height="1152"></div><figcaption>X-Ray: the stocks inside your funds</figcaption></figure>
-<figure><div class="phone"><img src="assets/growth.jpg" alt="How your money grew over time" loading="lazy" width="540" height="1152"></div><figcaption>How your money grew</figcaption></figure>
-<figure><div class="phone"><img src="assets/transactions.jpg" alt="Every purchase, SIP and redemption" loading="lazy" width="540" height="1152"></div><figcaption>Every transaction, fund by fund</figcaption></figure>
+<div class="feature flip">
+<div class="copy reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h2>Your real return</h2><p>Value, what you put in and your gain, updated with the latest NAV every day.</p><ul><li>XIRR for the funds you hold, the way investment platforms show it</li><li>How your money grew since your first investment</li><li>Gains already booked on units you sold</li></ul></div>
+<div class="reveal"><div class="phone"><img src="assets/growth.jpg" alt="How your money grew: value against money put in over time" loading="lazy" width="720" height="1536"></div></div>
 </div>
+<div class="feature">
+<div class="copy reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div><h2>Every transaction, and what it costs you</h2><p>Every purchase, SIP, redemption and switch from your statements, fund by fund.</p><div class="also"><span class="chip">Fees a year</span><span class="chip">Direct vs Regular</span><span class="chip">Tax if sold today</span><span class="chip">Nifty 50 comparison</span></div></div>
+<div class="reveal"><div class="phone"><img src="assets/transactions.jpg" alt="Transactions: every purchase, SIP and redemption" loading="lazy" width="720" height="1536"></div></div>
+</div>
+<p class="fine">Screens show the app's sample portfolio, not a real investor's.</p>
 </section>
 
 <section class="block">
@@ -158,6 +171,16 @@ footer .links a{color:var(--muted);text-decoration:none;font-weight:500}
 </div>
 <a class="btn btn-dark" href="https://github.com/vallabhaneniajay999-dot/mf-arena-xray/releases/latest/download/mf-arena.apk">Download APK</a>
 </div>
+</section>
+
+<section class="block faq">
+<h2 class="reveal">Questions</h2>
+<details class="reveal"><summary>Is MF Arena free?</summary><p>Your value, returns, funds and transactions are free. Some detail screens will be part of MF Arena Pro, which is not on sale yet: early testers get the first year free when it opens.</p></details>
+<details class="reveal"><summary>Do you need my CAMS, broker or bank password?</summary><p>No. We never ask for your mutual fund, broker or bank passwords. You sign in with a 6-digit code sent to your email.</p></details>
+<details class="reveal"><summary>Which statements work?</summary><p>The Consolidated Account Statement (CAS) from CAMS or KFintech, which covers mutual funds from every fund house. Connect Gmail (read-only) and we find it for you, or forward it to your private import address.</p></details>
+<details class="reveal"><summary>Can MF Arena buy or sell funds?</summary><p>No. It only reads your statement and shows the numbers. It cannot place orders or move money.</p></details>
+<details class="reveal"><summary>What happens to my statement?</summary><p>The statement file is deleted after it is read. Your PAN and statement passwords are stored encrypted, and you can download or delete everything from inside the app.</p></details>
+<details class="reveal"><summary>Is this investment advice?</summary><p>No. MF Arena shows facts and calculations about your own portfolio. It does not recommend any fund.</p></details>
 </section>
 
 <section class="block"><p class="notice reveal">MF Arena shows information and calculations about your own portfolio only. It is not investment advice, does not recommend any fund and does not execute transactions. Early access opens your email app with a message to us; we use your address only to send the test invite.</p></section>
