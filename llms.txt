@@ -10,7 +10,7 @@
 
 ## How it gets data
 - Connect Gmail (read-only) to find CAS emails, or forward the CAS to a private import address
-- Sign-in with a 6-digit email code; no broker, bank or mutual fund passwords are ever asked for
+- Sign-in with a code sent to their email; no broker, bank or mutual fund passwords are ever asked for
 
 ## Links
 - Website: https://mfarena.com/
