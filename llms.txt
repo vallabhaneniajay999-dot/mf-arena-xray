@@ -1,0 +1,20 @@
+# MF Arena
+
+> Mutual fund portfolio tracker for India (Android). It reads the user's own CAMS or KFintech Consolidated Account Statement (CAS) and shows facts about their portfolio. It is read-only, does not execute transactions and is not investment advice.
+
+## What it shows
+- Portfolio value, amount invested, gain and XIRR (for the funds held, as investment platforms show it), updated with the latest NAV daily
+- X-Ray: the stocks inside all the user's funds added together, and which funds hold the same stocks (overlap)
+- Sectors and asset mix (stocks, bonds, gold, cash)
+- Every transaction; yearly fund fees (expense ratio), Direct vs Regular, tax if sold today, comparison with a Nifty 50 index fund
+
+## How it gets data
+- Connect Gmail (read-only) to find CAS emails, or forward the CAS to a private import address
+- Sign-in with a 6-digit email code; no broker, bank or mutual fund passwords are ever asked for
+
+## Links
+- Website: https://mfarena.com/
+- Privacy policy: https://mfarena.com/privacy.html
+- Terms of use: https://mfarena.com/terms.html
+- Delete your account: https://mfarena.com/delete-account.html
+- Contact: hello@mfarena.com
