@@ -3,16 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MF Arena — Mutual fund portfolio tracker and X-Ray</title>
+<title>MF Arena — See what your mutual funds really hold</title>
 <link rel="canonical" href="https://mfarena.com/">
-<meta name="description" content="MF Arena reads your own CAMS or KFintech mutual fund statement and shows your real return (XIRR), the stocks inside your funds, fund overlap, fees and tax. Facts, never advice.">
+<meta name="description" content="See your real returns, the stocks inside your mutual funds, where they overlap and what you pay in fees, all in one place. Free, private, and your data stays in India.">
 <meta name="theme-color" content="#18181B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MF Arena">
 <meta property="og:url" content="https://mfarena.com/">
-<meta property="og:title" content="MF Arena — Mutual fund portfolio tracker and X-Ray">
-<meta property="og:description" content="MF Arena reads your own CAMS or KFintech mutual fund statement and shows your real return (XIRR), the stocks inside your funds, fund overlap, fees and tax. Facts, never advice.">
-<meta property="og:image" content="https://mfarena.com/assets/home.jpg">
+<meta property="og:title" content="MF Arena — See what your mutual funds really hold">
+<meta property="og:description" content="See your real returns, the stocks inside your mutual funds, where they overlap and what you pay in fees, all in one place. Free, private, and your data stays in India.">
+<meta property="og:image" content="https://mfarena.com/assets/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MF Arena: see what your mutual funds really hold">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"MF Arena","url":"https://mfarena.com/","logo":"https://mfarena.com/assets/icon.png","email":"hello@mfarena.com"},{"@context":"https://schema.org","@type":"MobileApplication","name":"MF Arena","operatingSystem":"Android 7.0 or newer","applicationCategory":"FinanceApplication","description":"Mutual fund portfolio tracker for India: reads your CAMS or KFintech CAS statement and shows your value, XIRR, the stocks inside your funds, fund overlap, fees and tax. Read-only; not investment advice.","url":"https://mfarena.com/","image":"https://mfarena.com/assets/home.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which statements work?","acceptedAnswer":{"@type":"Answer","text":"The Consolidated Account Statement (CAS) from CAMS or KFintech, which covers mutual funds from every fund house. Connect Gmail (read-only) and we find it for you, or forward it to your private import address."}},{"@type":"Question","name":"Do you need my CAMS, broker or bank password?","acceptedAnswer":{"@type":"Answer","text":"No. We never ask for your mutual fund, broker or bank passwords. You sign in with a code sent to your email."}},{"@type":"Question","name":"What happens to my statement?","acceptedAnswer":{"@type":"Answer","text":"The statement file is deleted after it is read. Your PAN and statement passwords are stored encrypted, and you can download or delete everything from inside the app."}},{"@type":"Question","name":"Can MF Arena buy or sell funds?","acceptedAnswer":{"@type":"Answer","text":"No. It only reads your statement and shows the numbers. It cannot place orders or move money."}},{"@type":"Question","name":"Is this investment advice?","acceptedAnswer":{"@type":"Answer","text":"No. MF Arena shows facts and calculations about your own portfolio. It does not recommend any fund."}},{"@type":"Question","name":"Is MF Arena free?","acceptedAnswer":{"@type":"Answer","text":"Your value, returns, funds and transactions are free. Some detail screens will be part of MF Arena Pro, which is not on sale yet: early testers get the first year free when it opens."}}]}]</script>
 <link rel="icon" href="assets/favicon.png">
@@ -135,8 +138,9 @@ body.has-bar footer{padding-bottom:110px}
 <div class="hero-in">
 <div>
 <h1 class="rise">See inside <span class="mark">your mutual funds</span></h1>
-<p class="lead rise" style="--d:.08s">MF Arena reads your own CAMS or KFintech statement and shows the facts about your money in one place. Facts about your portfolio, never advice.</p>
+<p class="lead rise" style="--d:.08s">Your real returns, the stocks inside your funds, where they overlap and what you pay in fees, all in one place. Facts about your own money, never advice.</p>
 <div class="actions rise" style="--d:.16s"><a class="btn btn-lime" href="https://github.com/vallabhaneniajay999-dot/mf-arena-xray/releases/latest/download/mf-arena.apk">Download for Android</a><a class="btn btn-ghost" href="#notify">Get notified</a></div>
+<p class="note" id="invite" hidden></p>
 <p class="note rise" style="--d:.22s">Free test version · Android 7+ · 50 MB · <a href="#download">how to install</a></p>
 </div>
 <div class="rise" style="--d:.2s"><div class="phone"><img src="assets/home.jpg" alt="MF Arena home screen: value, what was put in, gain and the growth line (sample portfolio)" width="720" height="1536"></div></div>
@@ -208,6 +212,10 @@ b.disabled=true;b.textContent='Adding…';m.textContent='';
 fetch('https://cvqzshiejlpkvomhoeum.supabase.co/functions/v1/site-waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v,website:f.website.value})})
 .then(function(r){if(!r.ok)throw 0;f.classList.add('done');m.textContent='You’re on the list. We’ll email you once, when MF Arena is on Google Play.';m.className='msg ok';})
 .catch(function(){b.disabled=false;b.textContent='Notify me';m.textContent='Couldn’t add you just now. Please try again in a minute.';m.className='msg err';});});})();
+</script>
+<script>
+(function(){var c=(new URLSearchParams(location.search).get('invite')||'').toUpperCase();if(!/^[A-HJ-NP-Z2-9]{8}$/.test(c))return;
+var el=document.getElementById('invite');if(!el)return;el.textContent='Your friend’s invite code: '+c+'. After installing, enter it in Profile → Invite a friend, before your first statement. When your statement is read, you both get 7 days of Pro free.';el.hidden=false;})();
 </script>
 
 <section class="block">
