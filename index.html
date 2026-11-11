@@ -332,7 +332,7 @@ fetch('https://cvqzshiejlpkvomhoeum.supabase.co/functions/v1/site-waitlist',{met
 .catch(function(){b.disabled=false;b.textContent='Notify me';m.textContent='Couldn’t add you just now. Please try again in a minute.';m.className='msg err';});});})();
 </script>
 <script>
-(function(){var c=(new URLSearchParams(location.search).get('invite')||'').toUpperCase();if(!/^[A-HJ-NP-Z2-9]{8}$/.test(c))return;
+(function(){var q=new URLSearchParams(location.search),c=(q.get('ref')||q.get('invite')||'').toUpperCase();if(!/^[A-HJ-NP-Z2-9]{8}$/.test(c))return;
 var el=document.getElementById('invite');if(!el)return;el.textContent='Your friend’s invite code: '+c+'. After installing, enter it in Profile → Invite a friend, before your first statement. When your statement is read, you both get 7 days of Pro free.';el.hidden=false;})();
 </script>
 
